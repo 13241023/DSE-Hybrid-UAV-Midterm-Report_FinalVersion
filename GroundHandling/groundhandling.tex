@@ -1,0 +1,235 @@
+\chapter{Ground Handling}
+\label{ch:grou_hand}
+%don't change this label again, whoever did this please just use the conventions (for a chapter --> ch:four letters of each word separated by underscores
+
+In this chapter, the different aspects of ground handling of the UAV concepts will be discussed. This consists of all relevant stages before and after flight. The stages can be identified as assembly, transport (of the UAV) and storage related aspects dimensions and mass, payload mounting and maintenance. 
+It is assumed that all concepts use a same type of ground system. Details about the ground system are elaborated in \autoref{sec:ol}. Also, it is assumed that charged batteries are available at any time such that used batteries after flight can easily be replace with charged ones. As a result, a ground system and batteries do not pose extra constraint on ground handling time. %An overview of different aspects of ground handling per concept is given at the end of this chapter.
+
+%This chapter did not adhere to the standard structure, is it possible to change it to fit it that way?
+% X Ground Handling
+% X.1 Trade-Off
+% X.1.1 Summary
+% X.1.2 Grading System
+% X.2 Criteria
+% X.2.1 Criteria #1 < explain a bit how it influences
+% etc
+% X.2.X Criteria Weights
+% X.3 Concept Analysis
+% X.3.1 Concept 1 < here you explain how much + or - each concept gets for each criteria
+% etc
+
+\section{Trade-Off}
+\label{sec:grou_hand_TO}
+In this section, the difference in the concept's quality with respect to the several ground handling aspects are explained.
+
+\subsection{Summary}
+Each of the aspects have been given weights that represent their importance to ground handling, as can be seen in \autoref{sec:grou_crit}. In \autoref{tab:summ_grou_hand} the performance of each concept is summarised. 
+
+% The dimensions have the lowest weight, as these only influence in what type of vehicle the UAV can be transported. The mass influences both transport, but also the ease with which the UAV can be handled. On the other hand, during maintenance it would not be possible for any of the designs to just lift it up with one person in any case, which resulted in the relatively low weight for mass. 
+%Payload mounting is very important yet does not have the largest weight, as the mounting concept can easily be changed for all of the designs.
+%Then both the assembly and maintenance have been assigned the largest weights, since they make up most of the time of the ground handling and are crucial to the success of the missions.
+
+
+The concepts that perform best in terms of ground handling are the Tailsitter and the Winged Quadcopter. It can be seen that both of them perform well in terms of mass and payload mounting. The worst concept, in terms of ground handling, is the Tandem.
+
+\begin{table}[H]
+    \centering
+    \caption{Ground Handling Sub Trade-off}
+    \label{tab:summ_grou_hand}
+    \begin{tabular}{r|>{\centering}p{2.5cm}:>{\centering}p{1cm}:>{\centering}p{1.25cm}:>{\centering}p{2cm}:>{\centering}p{2.5cm}|c}
+    \textbf{Concept \rotatebox{90}{\hspace{0.5cm}Criterion}}            & 
+    \rotatebox{90}{\textbf{Assembly}}                                   &
+    \rotatebox{90}{\textbf{Dimensions}}                                 & 
+    \rotatebox{90}{\textbf{Mass}}                                       & 
+    \rotatebox{90}{\textbf{Payload mounting}}                           & 
+    \rotatebox{90}{\textbf{Maintenance}}                                &
+    \rotatebox{90}{\textbf{Outcome}}
+    \\ \midrule
+    Tailsitter      &  +    & - -   &  +     &  + +  &   -   & 60\% 
+    \\\hdashline
+    Tandem          & - -   & + +   &  -     &   0   &   0   & 38\% 
+    \\\hdashline
+    Prandtl Box     &  0    & + +   & + +    &   -   &   +   & 54\% 
+    \\\hdashline
+    Tiltrotor       &  -    & -     &  -     &  + +  &  0    & 51\% 
+    \\\hdashline
+    Winged Quad.    &  +    & 0     & + +    &  + +  &  +    & 82\% 
+    \\ \midrule\midrule
+    Weight          & 27    & 10     & 15   & 21    & 27    &  
+    \end{tabular}
+\end{table}
+
+\begin{comment}
+\begin{table}[]
+    \centering
+    \caption{Ground Handling Sub Trade-off}
+    \label{tab:summ_grou_hand}
+    \begin{tabular}{r|>{\centering}p{2.5cm}:>{\centering}p{0.5cm}:>{\centering}p{1.25cm}:>{\centering}p{2cm}:>{\centering}p{2.5cm}|C}
+    \textbf{Concept \rotatebox{90}{\hspace{0.5cm}Criterion}}            & 
+    \rotatebox{90}{\textbf{Assembly}}                                   &
+    \rotatebox{90}{\textbf{Dimensions}}                                 & 
+    \rotatebox{90}{\textbf{Mass}}                                       & 
+    \rotatebox{90}{\multicolumn{1}{p{2cm}}{\raggedright \textbf{Payload mounting}}}  & 
+    \rotatebox{90}{\textbf{Maintenance}}                                &
+    \rotatebox{90}{\textbf{Outcome}}
+    \\ \midrule
+    Tailsitter      &  +    & - -   &  +     &  + +  &   -   & 60\% 
+    \\\hdashline
+    Tandem          & - -   & + +   &  -     &   0   &   0   & 38\% 
+    \\\hdashline
+    Prandtl Box     &  0    & + +   & + +    &   -   &   +   & 54\% 
+    \\\hdashline
+    Tiltrotor       &  -    & -     &  -     &  + +  &  0    & 51\% 
+    \\\hdashline
+    Winged Quad.    &  +    & 0     & + +    &  + +  &  +    & 82\% 
+    \\ \midrule\midrule
+    Weight          & 27    & 10     & 15   & 21    & 27    &  
+    \end{tabular}
+\end{table}
+\end{comment}
+
+\subsection{Grading System}
+
+The grades given are based on a better and worse performance. In \autoref{tab:grad_grou_hand}, the grading system can be found.
+\begin{table}[h]
+    \centering
+    \caption{Definition of ground handling grading system}
+    \label{tab:grad_grou_hand}
+    \begin{tabular}{r l}
+    \toprule
+     Rating    & Meaning 
+     \\ \midrule
+     + + & Excels 
+    \\ \hdashline
+    + & Better
+    \\ \hdashline
+    0 & Average
+    \\ \hdashline
+    - & Worse
+    \\ \hdashline
+    - - & Bad
+    \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+
+
+\section{Criteria}
+In this section, each of the criteria that is used in the ground handling sub-trade-off is discussed.
+
+\subsection{Assembly}
+In this section, the assembly advantages and disadvantages of each concept are discussed. Assembly has been given the largest weight as it makes up most of the time spent during ground handling. It is also very important as unsuccessful assembly will most likely lead to mission failure.
+
+
+\paragraph{The Tailsitter} 
+The Tailsitter does not have a separate fuselage section since it is a flying wing design. Because of this, there are only two parts that would naturally have to be assembled later. The propeller and the tail section can be removed to make transportation easier. It is also possible to section the wing. However, this will have a large negative impact on the structural integrity of the Tailsitter and impose a weight penalty because the connectors have to be rigid.
+
+
+\paragraph{The Tandem} 
+The Tandem poses an issue regarding the ease of (dis)assembly. This is because the propulsion is directed vertically by rotating the entire wings instead of rotating the propellers. Since joints have to withstand high stress while being able to rotate, it requires stiff assembly. On the contrary, the propellers do not require reinforced joints. 
+Although there are several disadvantages, The Tandem does not have a tail, which reduces the assembly stage. 
+
+%Since the connection already has to be able to endure a lot of stress while also being able to rotate, it requires the assembly to be very stiff. On the other hand, the propellers do not require an extra connection. The assembly of the propellers can therefore be done easily. The Tandem does not have a tail, meaning there is one less part to assemble. 
+
+
+
+\paragraph{The Prandtl Box} 
+The Prandtl Box has multiple options for assembly. An advantage of The Prandtl Box is that it can be deconstructed for easy transport. For the assembly of the wing, it should be kept in mind here that the closed wing section provides structural integrity. The wing will be disassembled into  straight pieces and corners, where the last ones are connection pieces. This is done because it will allow for easier transportation. Easy assembly of the wing requires the wing material to have some elasticity since the wing section is closed.
+All of the propellers can also be disassembled from the fuselage. It might even be possible to store everything inside the fuselage during transportation. This would, however, something to be considered during a later design stage.
+
+
+\paragraph{The Tiltrotor}
+The Tiltrotor has a similar problem as the Tandem has in assembly. The rotating propellers pose a weakness in the structure, and the connection has to be able to endure a lot of stress. But as the bending moment in the connection will be smaller, stresses won't be as high. This poses less restrictions on the connection type, making assembly less complex. It is also possible to only require the assembly of the tilting mechanism once, and make it possible to remove the wings and the propeller blades for transportation. The tail could also be disassembled, depending on the size of the transport vehicle.
+
+
+\paragraph{The Winged Quadcopter}
+The Winged Quadcopter design enables easy dis-assembly for transport, since the different components have a lot of natural assembly points. The assembly might take slightly longer than that of other concepts, because of this large number of assembly points. It will be possible to disassemble the wings, rotor blade mechanism and tail. A large advantage is that it is not necessary to disassemble the rotor blades once assembled as the entire mechanism can be taken off.
+
+
+
+\subsection{Dimensions}
+In this section, the dimensions of each concept are compared. This is done because different dimensions might influence the possibilities of transport and handling. Both the dimensions in the fully assembled and disassembled case are discussed. The estimated dimensions are based on the wing size estimation, as can be found in \autoref{sec:geom_prop}, and on the payload requirement that determines the fuselage size (SYS-PH-1.2). The wing thickness was not determined yet, but has been assumed equal to 10 cm, based on a chord of 0.66 m and a t/c ratio of 15\%\footnote{\url{http://www.wseas.us/e-library/conferences/2008/cairo/CD-MECHANICS/MECHANICS17.pdf}, Accessed 18-05-2017}. Both of these are overestimated, which means the actual design will probably have wings a lot thinner than 10 cm. 
+Based on average vans and cars, it is determined whether transportation is possible or not.\footnote{\url{https://www.businbedrijf.nl/nl/productinformatie/autogegevens/volkswagen}, Accessed 18-05-2017}$^{,}$ \footnote{\url{http://www.autoweek.nl/forum/read.php?1,5365747}, Accessed 18-05-2017} Since the dimensions only influence the possibilities of storage and transport of the UAV, it has been assigned a very small weight.
+
+
+
+\paragraph{The Tailsitter}
+The Tailsitter is estimated to fit in 2.60 x 1.10 m, based on the wing span and the payload orientation. This means it can never be transported in the back of a car, and only in certain vans. Only the propeller and the tail are disassembled in that case.
+
+\paragraph{The Tandem}
+The Tandem has an estimated wing span of 2.74 m, which means that without dis-assembly, it has the same problems as the Tailsitter yet can be transported in some vans. Even though assembly of the Tandem is not very easy, it is possible. Since the wing width is estimated at 42 cm, the Tandem should fit in 0.42 x 1.10 m, with a height of 55 cm. The propellers take up an additional 1.00 x 1.00 x 0.40 m as there are four. It is possible to transport this in any van or in a car with a large trunk. 
+
+\paragraph{The Prandtl Box}
+The Prandtl Box can be deconstructed to a large extent, meaning it can be made to fit into smaller dimensions. The total wing area is estimated to fit into 1.60 x 0.45 x 0.70 m, the fuselage section in 1.20 x 0.50 x 0.50 m and the propellers in 50 x 50 x 50 cm. This means it is possible to transport the Prandtl Box in any van or a car with a large trunk. 
+
+
+\paragraph{The Tiltrotor}
+The Tiltrotor is estimated to fit into 1.80 x 0.50 x 1.00 m for the wings and rotors plus tail and 1.20 x 0.50 x 0.50 m for the fuselage part. That means the dimensions are such that it can probably not be transported in a car. A van is required, but most are compatible. 
+
+
+\paragraph{The Winged Quadcopter}
+The Winged Quadcopter can fit into 1.70 x 0.50 x 0.50 m for the wings plus rotors and 1.20 x 0.50 x 0.50 m for the fuselage plus tail. This means it can be transported in some cars and in most vans.
+
+
+
+\subsection{Mass}
+In this section, the influence of the estimated mass with respect to ground handling is discussed. The mass estimations of each concept can be found in \autoref{sec:mass_esti}. Since recommended safety limits for carrying weight say women should carry max 16 kg and men 25 kg\footnotemark, a smaller mass means ground handling can be done with less people. When the mass gets too big, it might even be necessary to use a lifting device. This would impose a large penalty on the ground handling. Smaller mass enhances the general ground handling because it makes a lot of aspects like payload mounting and maintenance easier.
+\footnotetext{\url{http://www.beckettandco.co.uk/manual-handling-faq-weight/}, Accessed 16-05-2017} As mass influences a lot of the other criteria and can partly be seen in those scores, it has not been given a large weight.
+
+
+
+\paragraph{The Winged Quadcopter and the Prandtl Box} are estimated to weigh 44 and 38 kg, respectively. This makes it possible to be carried by two people when they're all men or three people. This is a great advantage in transport, since handling is really easy.
+
+\paragraph{The Tailsitter} is estimated to weigh 52 kg, requiring three to four people to carry it. As the UAV is not that large, it is not desirable to require over four people. This is because it becomes harder to hold it with more people. 
+
+\paragraph{The Tandem and the Tiltrotor} are both expected to have a weight around 80 kg, requiring four to five people to handle it. This is still possible, but not very desirable in terms of ground handling.
+
+
+\subsection{Payload Mounting}
+
+The payload mounting is relevant for the ground handling because faster mounting means faster ground handling. The mounting concepts can be divided into different groups: ones making use of a clicking mechanism, and ones using a door. These groups can then be divided in easy accessible doors or openings and openings that are located on, for example, the bottom of the UAV. The payload mounting has been assigned a weight close to the average weight, larger than mass and dimensions but smaller than the other two, because it is one of the most important aspects and has a very large impact on ground handling time, yet the system can easily be changed for each concept.
+
+The clicking mechanism makes payload mounting very easy as it only requires the payload module to be clicked into the UAV, taking only seconds. For the Tailsitter, Tiltrotor and Winged Quadcopter, this mounting mechanism is used. For each concept, however, the payload is loaded through the bottom of the UAV when it is stored. This is because the UAVs are all in the same position when the payload is installed as they are while hovering, and the payload mounting method should enable dropping of the payload. There is no system that allows both just sitting on the ground or a table while being loaded.
+
+The door system requires extra work, and therefore is not as beneficial as the clicking system. Both the Prandtl Box and the Tandem make use of it. The difference, however, is that the Tandem can be loaded while sitting on its landing gear while the Prandtl Box has to be loaded through the bottom when in storage. This gives the Tandem an advantage over the Prandtl Box.
+
+
+
+
+
+\begin{comment}
+I took this out, it's just a comment since I didn't want to remove all of it straight away x steph
+
+For a successful mission performance, it is very important that the payload can be carried reliably. The reliability of the payload mounting system can be assumed equal for each design, however some designs are more susceptible to centre of gravity variation. 
+
+The Tandem, Winged Quadcopter, Prandtl Box and Tiltrotor each have a larger range of stable centre of gravity positions. This is due to the fact that they either have wings or tails at the back for stability purposes. Since the tandem concept has no tail, the others have an advantage over it in terms of stability.
+
+The tailsitter concept however is a based on a flying wing design. One major disadvantage of flying wings is the allowable range of centre of gravity. This can become a reliability concern which can be solved using a fixed payload bay. In addition to this, the payload has to be distributed equally over the payload bay in order to not shift the centre of gravity. 
+\end{comment}
+
+
+
+
+
+
+
+
+
+
+\subsection{Maintenance}
+
+
+The ease with which maintenance can be performed on the different designs is dependent on multiple factors that were already discussed, like weight and assembly, but also on thinks like accessibility. Looking purely from a maintenance perspective, some parts are just easier to replace than others. This will be discussed in this section. The maintenance has been assigned the largest weight along with assembly since it makes up most of the time of the ground handling and is vital to the success of missions.
+
+\paragraph{The Tailsitter} is potentially one of the hardest concepts in terms of maintenance. This is because it has such a large continuous wing area, which means it is impossible to replace parts. On the other hand, the stresses on the wing are not very large, meaning the repair might still be done using patches. The only parts that can be replaced are the tails, control surfaces and the propeller. The thin body and small payload opening also make maintenance on the inside harder, as it is less accessible. 
+
+
+\paragraph{The Tandem} makes maintenance easier that the Tailsitter does since  it has multiple different parts. Each of these parts are easily accessed and replaced of serviced. The door on the back of the fuselage makes it possible to access the inside without lifting the UAV, but makes it hard to perform maintenance on the inside of the fuselage further to the front. 
+
+\paragraph{The Prandtl Box} is a design that allows for relatively easy maintenance because of the large amount of parts that are assembled. This causes the maintenance of parts to be easier and cheaper, as they have small sub-parts. The large door on the bottom of the fuselage also allows for good accessibility, enhancing the possibilities of maintenance inside the fuselage.
+
+\paragraph{The Tilt-Rotor} does not have as many sub-parts and has large weights on the edges of the wings, which means that it is not possible to do a repair in a lot of cases. Then the entire wing or other would have to be replaced, to maintain the structural strength. On the other hand, the large opening on the bottom makes maintenance on the inside of the fuselage easy.
+
+\paragraph{The Winged Quadcopter} is somewhere between the Prandtl Box and the Tilt-Rotor in terms of easy maintenance. This is because it has a lot of removable parts, but not as many as the Prandtl Box design. It does have the advantage of a large opening for loading, making maintenance on the inside easier.
+
+

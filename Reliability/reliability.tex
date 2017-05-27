@@ -1,0 +1,302 @@
+\chapter{Reliability Analysis}\label{ch:relianal}
+
+In this chapter, separate aspects of the concepts that might influence the reliability of the designs are discussed. First, the performance of the different concepts on the analysed reliability aspects is summarised. Then propulsion system, control surfaces and wings are assessed. The energy source is briefly elaborated, but it is not taken along in the analysis since it does not differ per concept. The payload mounting systems are not included in the analysis either, since the different types of payload mounting systems do not pose any advantages or disadvantages in terms of reliability. 
+
+The reliability of a subsystem is considered in two ways. The possibilities of failure are discussed, since they directly influence reliability. Also, a few values regarding the reliability of reference UAVs and other aircraft are presented when available.
+
+\section{Trade-Off}
+In this section, the final trade-off of the concepts is presented and then the grading system is explained. 
+
+\subsection{Summary}
+In this section, the reliability of the five concepts is compared in \autoref{tab:rel_ove}. The weights given to each reliability aspect are determined based on the sub-criteria. It is determined each sub-criteria is almost equally important. Only the control surfaces are slightly less important than the wing and propulsion reliability, therefore has been assigned with a slightly smaller weight. This is because it is still possible to continue flight and have certain control using the propulsion system when the control surfaces fail. The wing failure has a very large impact, since it is not even possible to make an emergency landing in that case. On the other hand, the probability of wing failure is very low in every case.
+
+This assessment shows that The Tandem would perform the worst in terms of reliability, while The Winged Quadcopter is the most reliable design. 
+
+%Please remake this table, just look at other sub trade-off tables and make it same. Do NOT bring random codes and packages for a single table only. -Bryan
+\begin{comment}
+\begin{table}[H]
+    \centering
+    \caption{Reliability Sub Trade-off}
+    \label{tab:rel_ove}
+    \begin{tabular}{r|>{\centering}p{3.5cm}:>{\centering}p{3cm}:>{\centering}p{3.5cm}|C}
+    \textbf{Concept \rotatebox{90}{\hspace{0.5cm}Criterion}}            & 
+    \rotatebox{90}{\textbf{Propulsion}}                                   &
+    \rotatebox{90}{\textbf{\multicolumn{1}{p{2cm}}{\raggedright{Control surface}}}}     & 
+    \rotatebox{90}{\textbf{Wings}}                                        &
+    \rotatebox{90}{\textbf{Outcome}}
+    \\ \midrule
+    The Tailsitter      &  -    &  0  &   +    & 50\% 
+    \\\hdashline
+    The Tandem          &  + &  - &   -   & 42.5\% 
+    \\\hdashline
+    The Prandtl Box     &  0   & ++   &  ++ & 82.5\% 
+    \\\hdashline
+    The Tiltrotor       &  0    &  0    & + & 58.75 \% 
+    \\\hdashline
+    The Winged Quad.    &   0  &  ++   & +  & 73.75\% 
+    \\ \midrule\midrule
+    Weight          & 35    &   30  & 35   & 
+    \end{tabular}
+\end{table}
+\end{comment}
+
+\subsection{Grading System}
+
+In order to grade the reliability performance of the different concepts, the grading system of \autoref{tab:susweight} is used. 
+
+\begin{table}[htb]
+\centering
+\caption{Definition of reliability grading system}
+\label{tab:relweight}
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{Rating}           & \textbf{Meaning}
+        \\ \midrule
+         ++            & Excellent reliability performance
+        \\ \hdashline
+        +   & Good reliability performance
+        \\ \hdashline
+         0          &  Average reliability performance
+        \\ \hdashline
+          -           & Bad reliability performance
+        \\ \hdashline
+         \texttt{-{}-}   & Unacceptable reliability performance
+        \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Propulsion System}
+
+In this section, the propulsion system of each design will be analysed and the reliability will be assessed. All configurations use electrical engines. Although engines have different performances using other power systems, it is assumed for the trade-off that each design uses the same battery and hence this discussion is not included in the following. 
+
+
+Electrical engines and propellers are very reliable and can operate without failure for time period in order of 10 years.\footnote{\url{http://electroprop.com/100-reasons/}, Accessed 12-05-2017}$^,$\footnote{\url{http://www.mt-propeller.com/en/entw/products.htm}, Accessed 12-05-2017}
+
+\paragraph{Double Propeller}
+The Tailsitter design only uses one double propeller located at its nose for both horizontal and vertical propulsion. The fact that only one engine is used for propulsion makes the reliability of it critical. After engine failure, no more prolonged vertical flight is possible and the drone has no other option but to perform an emergency landing, either horizontally or using autorotation.\footnote{\url{http://www.copters.com/pilot/autorotation.html}, Accessed 22-05-2017} Engine failure will result in mission failure due to the emergency landing and on some minor damage created by the emergency landing.
+
+\paragraph{Four Propellers}
+The Tandem, the Prandtl Box and the Winged Quadcopter make use of four propellers for vertical flight as well as horizontal flight. In case of engine failure, three engines for horizontal control remain and a horizontal landing can still be performed. Although vertical landing is still possible using 3 engines on a quadcopter, the process is difficult and complex algorithms have to be used\footnote{\url{https://www.ethz.ch/en/news-and-events/eth-news/news/2013/12/new-algorithm-makes-quadrocopters-safer.html}, Accessed 11-05-2017}.
+A difference between the Tandem and the other two designs is the rotating mechanism of the propulsion system. While the engines of the Tandem are fixed, the Prandtl Box and the Winged Quadcopter design use a rotating propulsion mechanism. Thus, the reliability also depends on the rotating mechanisms. Depending on whether the engines fail in horizontal or vertical mode, either a horizontal or a vertical landing has to be performed, which results in mission failure and a maintenance or replacement of the mechanisms.
+
+
+\paragraph{Two Propellers}
+The Tiltrotor uses the same rotational mechanism as the Prandtl Box. It only uses two instead of four engines for vertical, as well as horizontal flight. The reliability is based on the rotating mechanisms and engine failure. In case of engine failure, control during vertical flight is not possible anymore and a yawing moment is produced during horizontal and vertical flight. Two alternatives in case of engine failure are presented as following. One solution is to connect the second engine to the first one by a drive system in order to take control over both rotors. Another approach would be to perform a horizontal landing, in this case the torque created by the rotors has to be taken into account during the design of the rudder. The reliability of the rotating mechanisms can be compared to the one of the Winged Quadcopter design as on engine failure, enough control is still possible to perform a safe landing. 
+
+
+
+\subsection{Power System}
+Since each system is electric, a battery will probably be used as a main power source. Batteries are a reliable power source, but failure will have catastrophic consequences as they often are paired with fires.\footnote{\url{http://ijesat.org/Volumes/2012_Vol_02_Iss_05/IJESAT_2012_02_05_06.pdf}, Accessed 12-05-2017} Solar panels could be another potential energy source. These will most likely be used in combination with a battery, so the battery's reliability will remain critical. Solar panels are very reliable, with a life span of up to 25 years.\footnote{\url{http://greenzu.com/reliability-and-warranties}, Accessed 12-05-2017} 
+
+
+
+
+\section{Control Surfaces}
+
+In this section, the differences in reliability of the control system of each concept are discussed. This is dependent on the amount and type of control surfaces. In some concepts, failure of certain control systems can be compensated by the propulsion system or by the remaining control system. This has no impact on the reliability of the control system, but it does have an impact on the controllability. The reliability will be discussed per concept.
+
+
+\paragraph{The Tailsitter}
+The Tailsitter is mainly controlled by its control surfaces, making them a critical aspect of the design. It has ailerons that also act as elevators. It also has rudders. Both of these are generally very reliable \cite{reliability}. With the exception of cyclic and collective pitch control, the propulsion subsystem can not provide redundancy for the full range of flight conditions in case any of the control systems fail.
+
+\paragraph{The Tandem}
+The Tandem configuration has elevons near the tips of each wing. Besides that, it also has control surfaces at the rear wings' winglets to compensate for the lack of tail. These fulfil the function of a rudder. Since the tandem configuration has a rotor blade attached to each wing, these can provide some control in case of failure of any of the control surfaces. Control using propellers however might result in different angle of attack of the wings and produce even further instability. The reliability of the Tandems control surfaces is thus of critical importance. 
+
+\paragraph{The Prandtl Box}
+The Prandtl Box has ailerons on the front wing and elevators on both the front and back wing. It also makes use of a rudder in the tail. Since propulsive forces are applied by four engines at four different locations, redundancy is provided.
+
+\paragraph{The Tiltrotor}
+The Tiltrotor has ailerons in the wing and elevators on the horizontal stabiliser. It also has a rudder in the tail. This concept is very hard to control when hovering, since the centre of gravity location in fuselage-direction can differ. Since control in this flight mode is given by the rotors, these are critical to this design and should be very reliable.
+
+\paragraph{The Winged Quadcopter}
+The Winged Quadcopter makes use of both ailerons on the wings and elevators on the tail, as well as a rudder. The rotors mounted to the extensions on the wings can help control the UAV, making reliability of the control surfaces less important.
+
+
+
+
+
+\section{Wings}
+The wing layout of the concepts can be divided between conventional designs, wing layouts that are used frequently, and unconventional ones. The last category is not non-existent, but is not very common.
+
+
+\paragraph{Conventional Designs}
+The wings of the Tailsitter, the Tiltrotor and the Winged Quadcopter are all conventional designs. Their reliability can thus be compared to conventional aircraft. Here, statistical analysis shows that the reliability of conventional wings is above 99.99 \% for a 6 hours flight \cite{reliability}. This is, however, under the assumption that the wings are checked in constant intervals for cracks, damages, or any other signs of fatigue.
+
+\paragraph{Unconventional Designs}
+The Prandtl Box and the Tandem use unconventional designs. Their reliability will be discussed.
+
+
+The general Prandtl wing configuration is reliable due to the structural advantage of the closed wing section. Since the concept was altered slightly, taking the engines out of the wing, this structural integrity is maintained. Therefore the Prandtl wing configuration is the most reliable one.
+
+The most critical design in terms of wing reliability is the Tandem. This is due to the fact that not the engines themselves, but the wings can be rotated. Similar to the rotating mechanisms of engines in other designs, these mountings cause a reliability issue. This is because they have to bear the loads created by the wing and propulsion system. Many manufacturers have already observed that tilt-wing technology is riskier than tilt-rotor technology \cite{princeton}. Hence the reliability of the Tandem wings is classified lower than that of other designs. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{comment}
+COMENTED FROM HERE DON T CHECK, EXCEPT IF BORED...
+\section{Preliminary Design 1: the Tailsitter}
+%CONCEPT + critical points
+The Tailsitter concept is a relatively simple design. It consists of a flying wing with two large rotor blades at its nose, and a vertical tail in two directions. It is controlled by control surfaces in the wing and two vertical sections, comparable to a tail. Since these are the only ways to fully control the UAV, their reliability is critical. The rotor blades are also a critical component as they are the only way to propel the UAV.
+
+
+
+The presence of only one engine can cause safety issues. Failure of this component can be caused by for example overheating, over-current or vibrations.  
+
+
+results in an absence of propulsion, making a vertical landing impossible. In this case, the UAV has no other option but to make a horizontal glide landing.
+
+ 
+
+
+Main engine failure modes are due to overheating, over-current or vibrations. 
+Vibrations can be prevented by regularly checking the engine alignment. Overheating and over-current can be avoided using good hardware and matching the power source to the engine type. These steps make it possible to decrease the probability of engine failure during flight. 
+
+
+Stability might become an issue as only control surfaces are used to counteract torques created during hovering. The consequence of failure means that there is no more control over the aircraft 
+
+and depending on the position the control surfaces are stuck
+
+a crash can not be prevented.
+
+The impact is thus considered high. 
+??? this sentence should be rewritten -- really vague
+
+
+Another concern for reliability is the centre of gravity range. As the design is based on a flying wing, during horizontal flight the centre of gravity is not allowed to change a lot in order to still provide static stability. The consequences of this failure are an unstable flight condition. 
+
+This flight can be controlled depending on the intensity but should be avoided. 
+
+The impact is thus considered medium. The probability of failure can be decreased using the right payload mounting procedures and equally distributing the payload inside the payload bay.
+
+The final design can be categorised as reliable as the probability of most failure modes is low.  
+
+\begin{table}[htb]
+\centreing
+\caption{Reliability analysis for the Tailsitter}
+\label{tab:rel_tail}
+\begin{tabularx}{\textwidth}{p{2cm}p{3cm}p{2cm}p{5cm}p{2cm}}
+\toprule
+    \textbf{Part} & \textbf{Failure Cause} & \textbf{Probability of failure} & \textbf{Consequences} & \textbf{Impact} \\\midrule
+    Engine & Overheating  & Low & No vertical flight / \\ 
+    & Over-current & Low & Horizontal emergency landing & Medium \\
+    & Vibrations & Low &necessary\\\midrule
+    Control surfaces & Mechanical & Low & No more flight control  & High \\\midrule
+     Payload & Change in c.g. & Low & Unstable flight & Medium \\\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Preliminary Design 2: the Tandem} 
+
+The tandem wing design is a relatively complex design. It uses rotatable wings for control in vertical flight. These are the most critical part of the design and should be reliable. In horizontal flight four engines produces the necessary thrust and different control surfaces are used. Although these parts are important for horizontal flight, failure of an engine causes a lower impact. 
+
+
+Considering reliable properties, the fuselage can be considered as a simple structure to hold the payload. Also as the wings are rigid systems mounted at the front and back of the fuselage, centre of gravity shifts do not cause a big concern. 
+
+
+The first reliability concern comes from the landing gear. As the plane will land at landing wedges on each end of the wings, a too high landing speed might damage the wings. The consequences are a damaged landing wedge that needs to  be repaired. This can be prevented using controlled landing procedures.
+
+
+Furthermore, the wings are mounted on the fuselage using a rotation mechanism. All forces carried by the wing are transferred to the fuselage through these mountings, meaning they have to be designed for high stresses in order to avoid failure. The biggest reliability concern of these connections comes however from the rotating mechanisms themselves. In addition to carrying the loads, they should be able to rotate the wings from vertical to horizontal mode. To reduce the probability of failure, regular inspection of the wing mountings should be carried out. 
+
+
+In case of an engine failure, the same causes as for the previous design apply. However there are still 3 other engines available which can be used for horizontal flight. Vertical flight will not be possible anymore however and mission failure could be the consequence. 
+
+In case of control surface failure, the rotation of the wings can still be used to control the aircraft, hence the impact is reduces to medium compared to the tailsitter design. 
+
+
+\begin{table}[htb]
+\centering
+\caption{Reliability analysis for the Tandem}
+\label{tab:rel_tail}
+\begin{tabularx}{\textwidth}{p{2cm}p{3cm}p{2cm}p{5cm}p{2cm}}
+\toprule
+    \textbf{Part} & \textbf{Failure Cause} & \textbf{Probability of failure} & \textbf{Consequences} & \textbf{Impact} \\\midrule
+    Landing wedges & Impact Landing & Medium & Required maintenance & Low\\\midrule
+    Engine & Overheating  & Low   \\ 
+    & Over-current & Low & No vertical flight & Low \\
+    & Vibrations & Low &\\\midrule
+    Wings &Structural & Low & Loss of wing & High \\
+    & Rotational & Medium & Loss of vertical control & Medium\\\midrule
+    Control surfaces & Mechanical & Low & Less flight control & Medium \\\bottomrule
+\end{tabularx}
+\end{table}
+
+
+
+\section{Preliminary Design 3: the Prandtl Box}
+
+In this design, the wing and tail are connected to the fuselage using a closed-Prandtl configuration. This leads to a rigid structure where everything is interconnected. 
+
+The design has some structural reliability issues as the engines are mounted inside and in between the wings. This will create stress distribution which have to be carried by the interconnecting structure as well as by the wings. The impact of this failure is high due to the critical role of the wings. The design of a stiff and safe structure is of major importance to avoid failure. 
+
+Then the engines can be rotated for VTOL. This creates moving mechanisms which are susceptible to failure. If one of the actuators fails, the corresponding engine might become unavailable depending on its final position. Horizontal flight is still possible with the remaining engines however vertical control can not be used anymore. The probability  
+
+For the Prandtl Box, the structural reliability issue is solved using an adequate design for the loads and regular inspection and maintenance. The reliability in engine failure can be kept small using adequate engines and the failure of mechanisms can be lowered using appropriate mountings. Due to these engine reliability issues, the Prandtl Box is categorised as sufficiently reliable. 
+
+\begin{table}[htb]
+\centering
+\caption{Reliability analysis for the Tandem}
+\label{tab:rel_tail}
+\begin{tabularx}{\textwidth}{p{2cm}p{3cm}p{2cm}p{5cm}p{2cm}}
+\toprule
+    \textbf{Part} & \textbf{Failure Cause} & \textbf{Probability of failure} & \textbf{Consequences} & \textbf{Impact} \\\midrule
+    Engine & Overheating  & Low & No vertical flight / \\ 
+    & Over-current & Low & Horizontal emergency landing & Low \\
+    & Vibrations & Low &necessary\\
+    & Rotational Mechanism & Low & Loss of vertical control & Medium \\\midrule
+    Wings & Structural failure & Low & Crash & High \\\midrule
+    Control surfaces & Mechanical & Low & Less flight control & Medium \\\bottomrule
+\end{tabularx}
+\end{table}
+
+
+
+
+
+\section{Preliminary Design 4: the Tilt-rotor}
+
+This design is based on a conventional aircraft configuration which makes it reliable in terms of horizontal flight. However, only two engines are used. In case of engine failure, gears could be designed to link both engines. In this way, the remaining engine could also drive the second engine in order to still be able to perform a safe landing. This will however increase the complexity of the design. Furthermore, the engines themselves rotate in order to produce either horizontal or vertical thrust. In case of rotation failure, the unmanned aerial vehicle is not able to produce either horizontal or vertical thrust depending on the engine direction during failure. The reliability issue of this mechanisms is also of moderate order.
+Control during vertical take-off and landing is another reliability issue. The rotors have to rotated constantly to make the line of action of the thrust coincide with the centre of gravity in order to avoid instabilities. This can be achieved using a reliable algorithm. 
+
+The only issue not solved for is the case for a failure of the actuators for rotating the engines. Using advanced mechanisms the probability of failure can be reduced, however not removed. For this reason, the Tilt-rotor is sufficiently reliable.
+
+
+\section{Preliminary Design 5: the Winged Quadcopter}
+
+The last design is a really simple one. Using a conventional and thus reliable aircraft configuration for horizontal flight. For vertical flight, 4 rotors are used mounted at the wings. The mountings have to carry the load of the fans and the thrust required for vertical flight. In order to reduce probability of failure, they should be designed for stiffness. The only unreliable part are the rotational mechanisms of the rotors. They have to be rotated several times during each mission and hence failure of the rotation results in failure of the mission.   
+A small reliability issue can be found in the centre of gravity position. As the payload is mounted in the fuselage, care should be taken that the payload is distributed in a way that the centre of gravity does not shift to much forward in order to provide static stability.
+
+As with the previous design using rotating engines, the reliability of the system primarily depends on the reliability of these rotating mechanisms. For this reason, the design is categorised as sufficiently reliable. 
+ 
+\end{comment}

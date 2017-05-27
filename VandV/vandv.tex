@@ -1,0 +1,61 @@
+\chapter{Verification \& Validation Procedures}
+\label{ch:v_and_v}
+
+
+\section{Verification}%of requirements
+
+For verification of requirements, different methods can be performed like inspecting, analysing, demonstrating or testing. Verifying by inspection means using human senses to verify the requirement. Verification by analysis means verifying by mathematical theorems that the product satisfies the requirement. Verification by demonstration means verifying by operating the UAS under specific conditions to verify that the results are as expected. Verification by tests can be done by checking the compliance of the product with requirement under representative circumstances. The difference between test and demonstration is that testing normally requires a more specialised test setup and equipment. \autoref{tab:verific} gives an overview of all of the requirements and the method used to verify them in the final design; for clarity: A = analysis, D = demonstration, I = inspection and T = test. 
+
+
+
+
+\begin{table}[htb]
+\centering
+\caption{Requirements Verification Methods}
+\label{tab:verific}
+\begin{tabular}{ll|ll|ll}
+\toprule
+\textbf{Requirement} & \textbf{Method} & \textbf{Requirement} & \textbf{Method} & \textbf{Requirement} & \textbf{Method}\\ \midrule
+SYS-C-1                 &A                       &SYS-OP-2.7              &D &SYS-C-2                 &A \\\hdashline                      
+SYS-OP-2.8.2            &D &SYS-S-2                 &A                       &SYS-Op-2.8.6            &D \\\hdashline
+SYS-L-2                 &T                       &SYS-OP-2.8.7            &I    &SYS-L-3                 &T, A, D and I  \\\hdashline            
+SYS-OP-2.8.8            &D  &SYS-R-1                 &I                       &SYS-OP-2.9.2            &D \\\hdashline
+SYS-ENV-1.4             &T                       &SYS-OP-2.9.3            &D &SYS-ENV-1.5             &A   \\\hdashline                    
+SYS-OP-2.9.4            &D &SYS-ENV-1.6             &D                       &SYS-PF-1.1              &A      \\\hdashline
+SYS-ENV-2.1             &D                       &SYS-PF-1.2              &T         & SYS-ENV-2.2             &D       \\\hdashline                
+SYS-PF-1.3              &T          &SYS-ENV-2.5             &I                       &SYS-PF-1.4              &T          \\\hdashline
+SYS-PH-1.1              &I                       &SYS-PF-2.1              &D &SYS-PH-1.2              &I     \\\hdashline                  
+SYS-PF-2.2              &D &SYS-PH-2                &D                       &SYS-PF-2.3              &D \\\hdashline
+SYS-PH-4.3              &T                       &SYS-PF-2.4              &T          &SYS-PH-4.4              &T       \\\hdashline                
+SYS-PF-3                &A      &SYS-OP-1.1              &D                       &SYS-PF-4                &A      \\\hdashline
+SYS-OP-1.5              &I                       &SYS-VS-1.1              &D &SYS-OP-1.7              &D       \\\hdashline                
+SYS-VS-1.2.1            &T                          &SYS-OP-2.1              &A                       &SYS-VS-1.2.2            &T          \\\hdashline
+SYS-OP-2.2              &A                       &SYS-VS-1.2.3            &D &SYS-OP-2.3              &I  \\\hdashline     
+SYS-VS-1.2.4            &D                       &SYS-OP-2.4              &D                       &SYS-VS-2.1              &T          \\\hdashline
+SYS-OP-2.5.3            &T                       &SYS-VS-2.2              &T          &SYS-OP-2.5.4            &T         \\\hdashline              
+SYS-VS-2.3              &T          &SYS-OP-2.5.5            &T                       &SYS-VS-3                &I    \\\bottomrule
+\end{tabular}
+\end{table}
+
+
+\section{Validation}%of models 
+
+In this section, the different validation methods for the models and tools used in the  final design phase are presented and validated.
+Prove that all of the requirements are VALID (Verifiable, Achievable, Logical, Integral and  Definitive), has already been performed during their generation. Furthermore, the procedure on how to validate the final product will be discussed.
+
+\paragraph{Tool Validation}
+Different programs will be used in order create the model of a system. These include commonly used tools such as for example CATIA, EXCEL, and PYTHON but also less common tools can be used such as XFLR5. The calculation methods of the well known programs are validated by experience. This comes from the fact that many people use these tools for reliable calculations and hence it can be assumed that they are validated. The inputs given by the user will be validated using inspection, meaning reviewing all the inputs and checking the formulas for typos. The less common tools need to be validated by analysis in order to check if they are the correct tools to use for a certain purpose.
+
+%experience ---> different input where we know the outputs already (use of same model)
+%comparison ---> use different models or test data to calculated same outputs using same inputs
+\paragraph{Model Validation}
+The model validation will check if the models used to analyse systems and products are the correct models and if they reflect the physical phenomenon as accurately as required. Models can be validated in three different ways: by experience, by analysis and by comparison. Validating a model by experience is validating the same model using a different tool and checking whether the same outputs are produced. Validating by analysis means showing that the elements of the model are correct and are correctly integrated. Comparison validation compares the outcome of the model with independent models of proven validity or actual test data. The model validation procedures differ between each model. Depending on the tool used for example, different validation methods have to be used. Python programs are only created if no other existing model is available hence validation by comparison is not possible. These models either have to be validated using experience or analysis. This can be done by simulating already known outcomes (given a certain input) and checking whether the same relation is obtained using the model. 
+
+
+\paragraph{Product Validation}
+Validation of the product is answering the question if the product accomplishes the intended purpose. In other words, does the product fulfil the Mission Need Statement (MNS). Qualification tests and acceptance tests need to be performed for the system product validation. For example, a stress test and simulations as qualification tests and mission scenario tests and operations readiness tests for acceptance tests.
+
+\section{Execution}
+After the procedures for verification and validation have been set up, it can be executed. The results need to be processed and documented and the potential risks need to be re-assessed. Finally, if necessary, an iteration is possible.
+
+

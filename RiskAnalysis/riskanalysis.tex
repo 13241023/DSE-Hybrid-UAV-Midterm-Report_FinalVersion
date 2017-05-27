@@ -1,0 +1,512 @@
+\chapter{Technical Risk Assessment}
+\label{ch:tech_risk_asse}
+
+In the baseline report \cite{baseline}, a technical risk assessment was made based on all requirements. Since the properties of the concepts have been assessed, it has already become more clear what requirements are driving, key or killing (\autoref{ch:requ}). First, all risks that will not require more detailed assessing will be identified; more information on the risks on these requirements can be found in the baseline report \cite{baseline}. Then, a discussion on the risks that were deemed relevant can be seen in \autoref{sec:asse_requ}.
+
+\section{Risk Identification}
+\label{sec:risk_iden}
+In this section, it will be determined what requirements pose technical risks for some specific concepts. Therefore, the requirements, as can be seen in \autoref{ch:requ}, have been examined. The requirements that were not taken on in the further technical risk assessment can be found below, along with the reasoning behind it. After that, the requirements that actually were taken on in this technical risk analysis can be found in \autoref{sec:asse_requ}.
+
+\subsection{General groups of requirements} First, it was determined what groups of requirements would not have to be included in this technical risk assessment. These are discussed here.
+
+\paragraph{Non-critical requirements}
+All requirements labelled with an asterisk will not be assessed per concept. This is because these are non-critical requirements and therefore no added value is obtained from assessing the risk of not meeting these requirements per concept.
+
+\paragraph{Third level requirements}
+All requirements have been divided into different categories, and numbered in levels. Each requirement that is third level (like 1.1.1) or lower, will not be taken on into the technical risk analysis. This is done because these go into detail too deep for the risk assessment.
+
+\paragraph{Legislation}
+Requirements pertaining to legislation will not be assessed per concept. This is because these requirements, if met for one concept can easily be met for all concepts. Special risk assessment on a per concept basis is therefore not required.
+
+\paragraph{Resource}
+The only resource requirement, SYS-R-1, which states that the project and design shall not be performed by more than 10 team members is both a requirement which is not worth assessing the risk of not meeting as well as poses a risk which cannot be mitigated.
+
+\paragraph{Vehicle systems}
+The vehicle systems requirements (VS) discuss the communication systems and the propulsion system. The communication systems are related to the ground system and the other vehicles the UAV will have to communicate with -- both are the same for each concept. Also, in each concept electrical propulsion was chosen. Because of this, there will be no differences in technical risk related to vehicle systems requirements, making inclusion unnecessary.
+
+
+\subsection{Specific requirements}
+The risk of not meeting the following requirements which are not a part of the aforementioned requirement groups will also not be assessed per concept. 
+
+\paragraph{Cost}
+
+\begin{description}
+    \item[SYS-C-2] Since the exact parts that will be used in each UAV have not been determined, the maintenance support service cost can not be estimated yet. Also, the ground station is the same for each concept, so there will be no differences there.
+\end{description}
+
+
+\paragraph{Environmental}
+
+\begin{description}
+    \item[SYS-ENV-2.2] This requirement concerns environmental influences of the UAV. Since electrical propulsion is used in each concept, this requirement will be met for each concept.
+    \item[SYS-ENV-2.5] The risk associated with not meeting this requirement can be considered to be of the same magnitude for all concepts and depends on the production plan. The production plan can be manipulated such that it does meet this requirement for each concept.
+\end{description}
+
+
+\paragraph{Physical}
+
+\begin{description}
+    \item[SYS-PH-1.2] The payload bay requirement is determined by the size of the fuselage. For each design, this requirement can easily be met since the fuselage will just be given the correct dimensions.
+    \item[SYS-PH-2] This is a killer requirement, and none of the concepts are expected to be able to meet it. Because the result is then the same for each concept, this requirement has not been analysed.
+    \item[SYS-PH-4.4] This requirement is not verifiable yet, and it is not possible to say anything about the concepts being able to do this or not. 
+\end{description}
+
+
+\paragraph{Operational}
+
+\begin{description}
+    \item[SYS-OP-2.1] The operational life of the concepts depends on the reliability of the components. Since no concept makes use of very unreliable parts, this only depends on the production process.
+    \item[SYS-OP-2.2] As this requirement THIS ONE IS ABOUT RELIABILITY PLZ CHANGE
+    \item[SYS-OP-2.7] Assessing the risk of not meeting this requirement for each concept gives no extra legitimacy to this technical risk assessment. This requirement can easily be met by installing the requisite night equipment.
+\end{description}
+
+
+\paragraph{Performance}
+
+\begin{description}
+    \item[SYS-PF-2.1, 2.2] Each concept has been designed for vertical take-off and landing (VTOL) and therefore this requirement will not be assessed in this risk analysis.
+\end{description}
+    
+
+
+
+
+\section{Risk Assessment}
+\label{sec:risk_asse}
+
+The risk of not meeting the following requirements will be assessed as important insight into each concept is gained by doing so. For each concepts, the same requirements were used in the technical risk assessment.
+
+Each requirement has been abbreviated: since each requirement was a system requirement, the 'SYS-' part of the requirements was taken out for clarity in the tables. In this section, the technical risk assessment of each concept will be presented in \Cref{tab:tail_risk_asse,tab:tand_risk_asse,tab:pran_box_risk_asse,tab:tilt_risk_asse,tab:wing_quad_risk_asse}. For every requirement, a score has been given for the likeliness of not meeting it (L) and the impact when it is not met (I). Each gets a grade between 1 (almost impossible or negligible) to 4 (very likely or critical). The risks are identified and quantified. These will be used in the next section for the risk maps.
+
+
+
+\begin{table}[]
+    \centering
+    \caption{Tailsitter risk assessment}
+    \label{tab:tail_risk_asse}
+    \begin{tabularx}{\textwidth}{l L l l l}
+        \toprule
+        %\rowstyle{\bftext}
+        Risk            & Impact and Likelihood explanation                & L     & I     & R
+        \\ \midrule
+        C-1             & Since other hybrid UAVs are priced higher than 30,000 Euros\footnotemark, the impact is not large when this requirement is not met. When cheaper materials are used, so no carbon fibre, it is also possible to meet this requirement.                                & 3      & 1     & 3
+        \\ \hdashline
+        PH-1.1          & The current sizing (\autoref{tab:wing_summ}) completely exceeds these dimensions. Measures were already explained in \autoref{ch:grou_hand}. & 4 & 1 & 4 
+        \\ \hdashline
+        PH-4.3          & Since the concept has only one location where propulsion is generated, the mission will fail when the propulsion system fails. & 2      & 3     & 6
+        \\ \hdashline
+        OP-1.1          & The payload loading and unloading mechanism is positioned at the bottom of the concept while it is hovering. This means the Tailsitter is only able to release its payload while hovering, but not while it is in horizontal flight. Because it makes use of a clicking mechanism, the chance of the payload getting stuck is very small.                                                             & 1      & 4     & 4                        
+        \\ \hdashline
+        PF-1.1          & The likelihood of not meeting this requirement is very low, since the conceptual design process was centred around some driving requirements, including this one.                                                           & 1     & 3     & 3
+        \\ \hdashline
+        PF-1.2          & In order to meet this requirement, the power required for maximum velocity for this concept is estimated at 2.8 kW. This means it is possible to fly at 200 km/h, but not for an hour.                                                        & 1     & 2     & 2
+        \\ \hdashline
+        PF-1.3          & Not meeting this requirement would mean that certain missions are not possible anymore. The probability of not meeting this requirement is influenced by the battery capacity.                                               & 2     & 2     & 4
+        \\ \hdashline
+        PF-1.4          & Based on \autoref{sec:endu_anal}, the Tailsitter concept might not meet the endurance requirement. However, when it has the power to fly at 200 km/h, it will also have enough power to fly for one hour. Not meeting this requirement influences the types of possible missions.                         & 2     & 3     & 6      
+        \\ \hdashline
+        PF-2.3          & The hovering is one of the most power-intensive flight stages, meaning this requirement depends on the battery capacity. Not being able to fulfil this requirement would limit the amount of different missions that can be performed.                                                                    & 2       & 3 & 6
+        \\ \hdashline
+        PF-2.4          & Climb speed is determined by the vertical propulsive forces. Having a too low climb speed would result into a lot of unnecessary energy loss, since horizontal flight is a lot more energy efficient.               & 2   & 4   & 8
+        \\ \hdashline
+        PF-3            & Since the Tailsitter only has some control surfaces in its tail and only one double propeller at its nose, controllability might be difficult, especially in vertical flight conditions like hovering.                  & 4     & 2 & 8
+        \\ \hdashline
+        PF-4            & In horizontal flight, the Tailsitter is expected to be stable for a limited range of centres of gravity. In vertical flight, the UAV will be stabilised using a stabiliser bar.             & 4 & 1 & 4
+        \\ \bottomrule
+    \end{tabularx}
+\end{table}
+
+
+
+\begin{table}[]
+    \centering
+    \caption{Tandem risk assessment}
+    \label{tab:tand_risk_asse}
+    \begin{tabularx}{\textwidth}{l L l l l}
+        \toprule
+        %\rowstyle{\bftext}
+        Risk            & Impact and Likelihood explanation                & L     & I     & R
+        \\ \midrule
+        C-1             & Since other hybrid UAVs are priced higher than 30,000 Euros\footnotemark, the impact is not large when this requirement is not met. When cheaper materials are used, so no carbon fibre, it is also possible to meet this requirement.                                & 3      & 1     & 3
+        \\ \hdashline
+        PH-1.1          & In order to meet this requirement, it must be possible to split up the UAV in multiple parts. As can be seen in \autoref{sec:asse},%assembly section in ground handling
+        the Tandem can be disassembled for transport. A disadvantage of this is the increase in structural weight.                 & 2     & 2     & 4
+        \\ \hdashline
+        PH-4.3          & Since the Tandem has four propellers that can provide thrust in vertical and horizontal direction, engine failure is not critical. Because it also has four wings, with control surfaces, redundancy is provided.                                         & 1         & 3     & 3
+        \\ \hdashline
+        OP-1.1          & The Tandem is loaded through the back of the fuselage, which means that dropping the payload during flight requires the UAV to turn its fuselage in the air. When it turns out this is not possible, it is allowed to change mounting location to the bottom of the UAV.       & 2 & 4 & 8
+        \\ \hdashline
+        PF-1.1          & Since the design was centred around, among others, the payload, this will be possible.          & 1 & 4 & 4
+        \\ \hdashline
+        PF-1.2          & In order to reach this requirement, the power required is estimated at 10.2 kW (\autoref{REFER} REFER TO THE TABLE). This would require a large battery.       & 2     & 1     & 2
+        \\ \hdashline
+        PF-1.3          & Not meeting this requirement would mean certain missions are not possible anymore.    & 2 & 3 & 6
+        \\ \hdashline
+        PF-1.4          & Not meeting this requirement would severely limit the amount of missions that can be performed.          & 2 & 4 & 8
+        \\ \hdashline
+        PF-2.3          & Not meeting this requirement would limit the type of missions that can be carried out. Since hovering is a very power consumption intensive flight phase, this depends on the installed battery.       & 3 & 4 & 12
+        \\ \hdashline
+        PF-2.4          & Since the vertical flight uses a lot of energy, having a lower climb speed will have a negative impact on the required power.              & 2 & 3  & 6
+        \\ \hdashline
+        PF-3            & Since the Tandem has four propellers in different locations, it can be controlled in vertical flight phases, even when its speed is zero. It also has enough control surfaces to fully control it during horizontal flight. The absence of the tail can be compensated through the propulsion system.      & 1        & 2 & 2
+        \\ \hdashline
+        PF-4            & The Tandem is expected to be stable during horizontal flight. Like a regular quadcopter, it is not stable during vertical flight but is controlled using the propellers.     & 4 & 1 & 4
+        \\ \bottomrule
+    \end{tabularx}
+\end{table}
+
+
+
+
+\begin{table}[]
+    \centering
+    \caption{Prandtl Box risk assessment}
+    \label{tab:pran_box_risk_asse}
+    \begin{tabularx}{\textwidth}{l L l l l}
+        \toprule
+        %\rowstyle{\bftext}
+        Risk            & Impact and Likelihood explanation                & L     & I     & R
+        \\ \midrule
+        C-1             & If this requirement is not met, the effect on the project is not catastrophic as the estimated cost is expected to be between 30,000 and 60,000 Euros \footnotemark.                                                                     & 1     & 3     & 3
+        \\ \hdashline
+        PH-1.1          & The span of each wing in this concept is approximately 2 m and would therefore require dismantling in order to meet this requirement. Because of the Prandtl box wing concept even further divides will be required to fit everything in the prescribed volume. This will result in weight increases.    & 2 & 3 & 6  
+        \\ \hdashline
+        PH-4.3          & If this requirement was not to be met the risk of the UAV not being able to complete the required mission is high. For this concept the likelihood of not meeting this requirement is low.                                                                                 & 1      & 3     & 3 
+        \\ \hdashline
+        OP-1.1          & If this requirement is not met the possible missions are limited to surveillance type missions. For this concept this is not an issue because of the layout of the fuselage.   & 1 & 3 & 3
+        \\ \hdashline
+        PF-1.1          & The likelihood of not meeting this requirement is low as the design is centred around the payload. The missions will be affected if this requirement is not met.                                                                                                                 & 1 & 2 & 2
+        \\ \hdashline
+        PF-1.2          & If this requirement is not met time sensitive missions will be affected. The power required for this concept to meet this requirement is 9.0 kW which split over four motors is manageable, however this is a lot of power to be drawn from the batteries.  & 2 & 3 & 6
+        \\ \hdashline
+        PF-1.3          & If this requirement is not met the range sensitive missions might be affected. If \textbf{SYS-PF-1.3} is met for this concept then the likelihood of not meeting this requirement is negligible
+                & 1 & 3 & 3
+        \\ \hdashline
+        PF-1.4          & If this requirement is not met many mapping and surveillance missions would no longer be possible. If \textbf{SYS-PF-1.3} is met for this concept then the likelihood of not meeting this requirement is negligible                                                          & 1 & 3 & 3
+        \\ \hdashline
+        PF-2.3          & Not meeting this requirement would greatly limit the types and number of missions that can be conducted. The power required for this concept to hover is 2.9 kW which can be easily attained.  & 1 & 4 & 4
+        \\ \hdashline
+        PF-2.4           & The power required to climb at 4 m/s is 3.76 kW and providing the climb phase is quite short the energy required is small in comparison the energy required for hovering. Not meeting this requirement is not that critical, a smaller climb rate would not drastically diminish the capabilities of the UAV.                                                                                                                             & 1 & 2 & 2 
+        \\ \hdashline
+        PF-3            & The controllability of this concept is very high and especially because of having 4 motors. The likelihood of not meeting this requirement is therefore quite low.    & 2 & 2 & 4
+        \\ \hdashline        
+        PF-4            & This concept can be designed such that it is longitudinally, directionally and laterally stable therefore the risk of not meeting this requirement is low.         & 1 & 3 & 3
+        \\ \bottomrule
+    \end{tabularx}
+\end{table}
+
+
+
+\begin{table}[]
+    \centering
+    \caption{Tiltrotor risk assessment}
+    \label{tab:tilt_risk_asse}
+    \begin{tabularx}{\textwidth}{l L l l l}
+        \toprule
+        %\rowstyle{\bftext}
+        Risk            & Impact and Likelihood explanation                & L     & I     & R
+        \\ \midrule
+        C-1             & If this requirement is not met the effect on the project is not catastrophic as the estimated cost is expected to be between 30,000 and 60,000 Euros.                                                                                                                       & 1     & 3     & 3
+        \\ \hdashline
+        PH-1.1          & The span of The Tiltrotor is approximately 3.25 m which means that the only way this requirement can be satisfied is if the main wing can be dismantled into at least 2 pieces. Extra structural weight would be necessary to compensate for this segmentation.             & 2 & 3 & 6
+        \\ \hdashline
+        PH-4.3          & As this concept only has 2 rotors a complex redundancy system is required to meet this requirement. Not meeting this requirement can be critical to being able to fulfil the specified missions.                                                                            & 3 & 3 & 9
+        \\ \hdashline
+        OP-1.1          & Not meeting this requirement would limit the possible types of missions to surveillance and mapping. The likelihood of not meeting this requirement for this concept is small because of the fuselage configuration chosen.                                                     & 1 & 3 & 3 
+        \\ \hdashline
+        PF-1.1          & The likelihood of not meeting this requirement is low as the design is centred around the payload. The missions will be affected if this requirement is not met.                                                                                                                 & 1 & 2 & 2
+        \\ \hdashline
+        PF-1.2          & Not meeting this requirement would mean that missions where time is of the essence would be affected. The power required to meet this requirement for this concept is 8.0 kW which is a lot for both the motors (split over 2 motors) as well as power storage to manage.     & 3 & 3 & 9
+        \\ \hdashline
+        PF-1.3          & If this requirement is not met many mapping and surveillance missions would no longer be possible. If \textbf{SYS-PF-1.3} is met for this concept then the likelihood of not meeting this requirement is negligible                                                          & 2 & 3 & 6
+        \\ \hdashline
+        PF-1.4          & If this requirement is not met the types and duration of various surveillance and mapping missions will not be able to be carried out.                                                                                                                                          & 1 & 3 & 3
+        \\ \hdashline
+        PF-2.3          & The power required for this concept to hover is 5.06 kW and to pull this amount of power for a sustained 5 minutes requires quite a lot of stored energy. If this requirement is not met then many missions become impossible.                                                  & 2 & 3 & 6
+        \\ \hdashline
+        PF-2.4          & The power required to climb at 4 m/s is 6.51 kW and providing the climb phase is quite short the energy required is small in comparison the energy required for hovering. Not meeting this requirement is not that critical, a smaller climb rate would not drastically diminish the capabilities of the UAV.                                                                                                                             & 1 & 2 & 2 
+        \\ \hdashline
+        PF-3            & The controllability of this concept is quite bad in the vertical flight phases, however this can be compensated for by a robust control system.                                                                                                                                 & 2 & 3 & 6
+        \\ \hdashline
+        PF-4            & This concept can be designed such that it is longitudinally, directionally and laterally stable therefore the risk of not meeting this requirement is low.                                                                                                                      & 1 & 3 & 3
+        \\ \bottomrule
+    \end{tabularx}
+\end{table}
+
+
+
+\begin{table}[]
+    \centering
+    \caption{Winged Quadcopter risk assessment}
+    \label{tab:wing_quad_risk_asse}
+    \begin{tabularx}{\textwidth}{l L l l l}
+        \toprule
+        %\rowstyle{\bftext}
+        Risk            & Impact and Likelihood explanation               & L     & I     & R
+        \\ \midrule
+        C-1             & If this requirement is not met the effect on the project is not catastrophic as the estimated cost is expected to be between 30,000 and 60,000 Euros.        & 1     & 3     & 3
+        \\ \hdashline
+        PH-1.1          & The span of The Winged Quadcopter is approximated at 3.20 m. If the wing can be dismantled into two parts then this poses no issue with regards this requirement. Extra weight might result from a more robust structure required.                           & 2     & 3     & 6
+        \\ \hdashline
+        PH-4.3          & If this requirement was not to be met the risk of the UAV not being able to complete the required mission is high. For this concept the likelihood of not meeting this requirement is low.                                                                                 & 1      & 3     & 3
+        \\ \hdashline
+        OP-1.1          & Not meeting this requirement would limit the UAV's missions to surveillance missions only. For this concept the likelihood of not being able to airdrop its payload is low because of the type of configuration.                                                       & 1     & 3     & 3
+        \\ \hdashline
+        PF-1.1          & The likelihood of not meeting this requirement is low as the design is centred around the payload. The missions will be affected if this requirement is not met.   & 1 & 2     & 2
+        \\ \hdashline
+        PF-1.2          & Not meeting this requirement would limit the types of missions that can be carried out. The power required for this concept to meet this requirement is 4.7 kW which is attainable. & 3 & 2 & 6
+        \\ \hdashline
+        PF-1.3          & Not meeting this requirement would mean that certain missions would be hindered. The likelihood of this happening is low based on reference craft of the same configuration. & 1 & 3 & 3        
+        \\ \hdashline
+        PF-1.4          & If this requirement is not met many mapping and surveillance missions would no longer be possible. If \textbf{SYS-PF-1.3} is met for this concept then the likelihood of not meeting this requirement is negligible.                                               & 2 & 3 & 6
+        \\ \hdashline
+        PF-2.3          & This requirement, if not met, means that the missions requiring this capability cannot be conducted. The power required to hover is 4.4 kW meaning that if \textbf{SYS-PF-1.3} is met for this concept then the likelihood of not meeting this requirement is negligible.   & 2 & 3 & 6
+        \\ \hdashline
+        PF-2.4          & The power required to climb at 4 m/s is 4.4 kW and providing the climb phase is quite short the energy required is small in comparison the energy required for hovering. Not meeting this requirement is not that critical, a smaller climb rate would not drastically diminish the capabilities of the UAV.                                                                               & 1 & 2 & 2 
+        \\ \hdashline
+        PF-3            & The controllability of this concept is very high and especially because of being a quadcopter. The likelihood of not meeting this requirement is therefore quite low.    & 2 & 2 & 4
+        \\ \hdashline        
+        PF-4            & This concept can be designed such that it is longitudinally, directionally and laterally stable therefore the risk of not meeting this requirement is low.         & 1 & 3 & 3
+        \\ \bottomrule  
+    \end{tabularx}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
+\section{Mapping and Mitigation of Risks}
+\label{sec:mapp_miti_risk}
+Based on \autoref{sec:risk_asse}, the risks are presented in risk maps, where the actual risk is visualised. Everything that is in the green part of the maps (bottom left corner) is not problematic. All requirements that are in the yellow or red part, however, must be mitigated. The top right corner, the red part, is the place where the biggest threats can be found.
+
+
+
+
+
+
+\begin{table}[H]
+    \centering
+    \caption{Risk map of the Tailsitter}
+    \label{tab:risk_map_tail}
+    \begin{tabular}{p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}}
+    \toprule
+                    & (Almost) impossible           & Improbable                    & Probable                          & Very likely
+    \\ \midrule
+    Catastrophic    &\cellcolor[HTML]{d9ead3} OP-1.1      &\cellcolor[HTML]{fff2cc}  PF-2.4       &\cellcolor[HTML]{f4cccc}           &\cellcolor[HTML]{f4cccc}
+    \\ \hdashline
+    Critical        &\cellcolor[HTML]{d9ead3} PF-1.1      &\cellcolor[HTML]{fff2cc} PH-4.3, PF-1.4, PF-2.3      &\cellcolor[HTML]{fff2cc}           &\cellcolor[HTML]{f4cccc}
+    \\ \hdashline
+    Marginal        &\cellcolor[HTML]{d9ead3} PF-1.2      &\cellcolor[HTML]{d9ead3} PF-1.3      &\cellcolor[HTML]{fff2cc}           &\cellcolor[HTML]{fff2cc}  PF-3
+    \\ \hdashline
+    Negligible      &\cellcolor[HTML]{d9ead3}       &\cellcolor[HTML]{d9ead3}       &\cellcolor[HTML]{d9ead3}  C-1         &\cellcolor[HTML]{d9ead3} PH-1.1,  PF-4
+    \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+    \centering
+    \caption{Risk map of Tandem}
+    \label{tab:risk_map_tand}
+    \begin{tabular}{p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}}
+    \toprule
+                    & (Almost) impossible           & Improbable                    & Probable                          & Very likely
+    \\ \midrule
+    Catastrophic    &\cellcolor[HTML]{d9ead3} PF-1.1       &\cellcolor[HTML]{fff2cc} OP-1.1,  PF-1.4      &\cellcolor[HTML]{f4cccc} PF-2.3          &\cellcolor[HTML]{f4cccc}
+    \\ \hdashline
+    Critical        &\cellcolor[HTML]{d9ead3} PH-4.3      &\cellcolor[HTML]{fff2cc} PF-1.3, PF-2.4      &\cellcolor[HTML]{fff2cc}           &\cellcolor[HTML]{f4cccc}
+    \\ \hdashline
+    Marginal        &\cellcolor[HTML]{d9ead3} PF-3      &\cellcolor[HTML]{d9ead3}  PH-1.1     &\cellcolor[HTML]{fff2cc}           &\cellcolor[HTML]{fff2cc}
+    \\ \hdashline
+    Negligible      &\cellcolor[HTML]{d9ead3}       &\cellcolor[HTML]{d9ead3}  PF-1.2     &\cellcolor[HTML]{d9ead3} C-1          &\cellcolor[HTML]{d9ead3} PF-4
+    \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+
+
+\begin{table}[H]
+    \centering
+    \caption{Risk map of Prandtl Box}
+    \label{tab:risk_map_pran_box}
+    \begin{tabular}{p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}}
+    \toprule
+                    & (Almost) impossible                                               & Improbable                            & Probable                          & Very likely
+    \\ \midrule
+    Catastrophic    &\cellcolor[HTML]{d9ead3}   PF-2.3                                        &\cellcolor[HTML]{fff2cc}               &\cellcolor[HTML]{f4cccc}           &\cellcolor[HTML]{f4cccc} 
+    \\ \hdashline
+    Critical        &\cellcolor[HTML]{d9ead3} PH-1.1, PH-4.3, OP-1.1, PF-1.3, PF-1.4, PF-4   &\cellcolor[HTML]{fff2cc} PH-1.1, PF-1.2 &\cellcolor[HTML]{fff2cc}           &\cellcolor[HTML]{f4cccc}
+    \\ \hdashline
+    Marginal        &\cellcolor[HTML]{d9ead3}  PF-1.1, PF-2.4                            &\cellcolor[HTML]{d9ead3}  PF-3         &\cellcolor[HTML]{fff2cc}           &\cellcolor[HTML]{fff2cc}
+    \\ \hdashline
+    Negligible      &\cellcolor[HTML]{d9ead3}                                           &\cellcolor[HTML]{d9ead3}               &\cellcolor[HTML]{d9ead3}           &\cellcolor[HTML]{d9ead3}
+    \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+    \centering
+    \caption{Risk map of Tiltrotor}
+    \label{tab:risk_map_tilt}
+    \begin{tabular}{p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}}
+    \toprule
+                    & (Almost) impossible           & Improbable                    & Probable                          & Very likely
+    \\ \midrule
+    Catastrophic    &\cellcolor[HTML]{d9ead3}       &\cellcolor[HTML]{fff2cc}       &\cellcolor[HTML]{f4cccc}           &\cellcolor[HTML]{f4cccc}
+    \\ \hdashline
+    Critical        &\cellcolor[HTML]{d9ead3} C-1, OP-1.1, PF-1.4, PF-4       &\cellcolor[HTML]{fff2cc} PH-1.1, PF-1.3, PF-2.3, PF-3      &\cellcolor[HTML]{fff2cc}   PH-4.3, PF-1.2         &\cellcolor[HTML]{f4cccc}
+    \\ \hdashline
+    Marginal        &\cellcolor[HTML]{d9ead3} PF-1.1, PF-2.4      &\cellcolor[HTML]{d9ead3}       &\cellcolor[HTML]{fff2cc}           &\cellcolor[HTML]{fff2cc}
+    \\ \hdashline
+    Negligible      &\cellcolor[HTML]{d9ead3}       &\cellcolor[HTML]{d9ead3}       &\cellcolor[HTML]{d9ead3}           &\cellcolor[HTML]{d9ead3}
+    \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+    \centering
+    \caption{Risk map of Winged Quadcopter}
+    \label{tab:risk_map_wing_quad}
+    \begin{tabular}{p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}}
+    \toprule
+                    & (Almost) impossible                                       & Improbable                                    & Probable                          & Very likely
+    \\ \midrule
+    Catastrophic    &\cellcolor[HTML]{d9ead3}                                   &\cellcolor[HTML]{fff2cc}                       &\cellcolor[HTML]{f4cccc}           &\cellcolor[HTML]{f4cccc}
+    \\ \hdashline
+    Critical        &\cellcolor[HTML]{d9ead3} C-1, PH-4.3, OP-1.1, PF-1.3, PF-4     &\cellcolor[HTML]{fff2cc} PH-1.1, PF-1.4, PF-2.3  &\cellcolor[HTML]{fff2cc}           &\cellcolor[HTML]{f4cccc}
+    \\ \hdashline
+    Marginal        &\cellcolor[HTML]{d9ead3} PF-1.1, PF-2.4                     &\cellcolor[HTML]{d9ead3}  PF-3                 &\cellcolor[HTML]{fff2cc} PF-1.2    &\cellcolor[HTML]{fff2cc}
+    \\ \hdashline
+    Negligible      &\cellcolor[HTML]{d9ead3}                                   &\cellcolor[HTML]{d9ead3}                       &\cellcolor[HTML]{d9ead3}           &\cellcolor[HTML]{d9ead3}
+    \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+\section{Risk Mitigation}
+
+In this section, the mitigation measures will be described for each concept. In \Cref{tab:miti_tail,tab:miti_pran_box,tab:miti_tand,tab:miti_tilt,tab:miti_wing_quad} the measures are presented per concept. The old risk, R, is presented along with the mitigated risk, M, that arises from the new likelihood of occurrence (L) and impact (I).
+
+\begin{table}[H]
+    \centering
+    \caption{Mitigation measures for problematic risks of the Tailsitter}
+    \label{tab:miti_tail}
+    \begin{tabularx}{\textwidth}{l L *{4}{c}}
+    \toprule
+    Risk            & Impact and Likelihood explanation             &       L   & I & M & R           
+    \\ \midrule
+    PH-4.3          & Make sure to install a very reliable propeller.  &    1   & 3 & 3 & 6
+    \\ \hdashline
+    PF-1.4          & Decide that endurance is more important than the mass and cost, and install a battery large enough to meet the requirement.                         & 1 & 3 & 3 & 6
+    \\ \hdashline
+    PF-2.3          & Install powerful propellers.                       &   1   & 3 & 3 & 6                           
+    \\ \hdashline
+    PF-2.4          & Install powerful propellers.                       &   1   & 4 & 4 & 8
+    \\ \hdashline
+    PF-3            & Enable extra controllability using the double propeller.   & 2 & 2 & 4 & 8
+    \\ \bottomrule
+    \end{tabularx}
+\end{table}
+
+
+
+\begin{table}[H]
+    \centering
+    \caption{Mitigation measures for problematic risks of the Tandem}
+    \label{tab:miti_tand}
+    \begin{tabularx}{\textwidth}{l L *{4}{c}}
+    \toprule
+    Risk            & Impact and Likelihood explanation                                     & L & I & M & R
+    \\ \midrule
+    OP-1.1          & Change mounting location.                                             & 1 & 4 & 4 & 8
+    \\ \hdashline
+    PF-1.3          & Install powerful propellers.                                      &   1   & 3 & 3 & 6 
+    \\ \hdashline
+    PF-1.4          & Install powerful propellers.                                      &   1   & 4 & 4 & 8 
+    \\ \hdashline
+    PF-2.3 & Install large battery.                                            &   1   & 4 & 4 & 8 
+    \\ \hdashline
+    PF-2.4          & Install powerful propellers.                                      &   1   & 3 & 3 & 6 
+    \\ \bottomrule
+    \end{tabularx}
+\end{table}
+
+
+\begin{table}[H]
+    \centering
+    \caption{Mitigation measures for problematic risks of the Prandtl Box}
+    \label{tab:miti_pran_box}
+    \begin{tabularx}{\textwidth}{l L *{4}{c}}
+    \toprule
+    Risk            & Impact and Likelihood explanation                             & L & I & M & R
+    \\ \midrule
+    PH-1.1          & Find an efficient way to be able to divide the structure in multiple parts without adding excessive extra structural weight.                             & 2 & 2 & 4 & 6
+    \\ \hdashline
+    PF-1.2          & Install a battery and propulsion system that can provide enough power.       & 1 & 3 & 3 & 6
+    \\ \bottomrule
+    \end{tabularx}
+\end{table}
+
+\iffalse
+\begin{table}
+    \centering
+    \caption{Mitigation measures for problematic risks of the Tiltrotor}
+    \label{tab:miti_tilt}
+    \begin{tabularx}{\textwidth}{l L *{4}{c} }
+    \toprule
+    Risk            & Impact and Likelihood explanation                             & L & I & M & R
+    \\ \midrule
+    PH-1.1          & Devise an efficient way of dividing the structure such that it fits into the prescribed volume.     & 1 & 3 & 3 & 6
+    \\ \hdashline
+    PH-4.3          & Design redundancy system allowing an one rotor to be powered by the other motor in the event that it fails. & 2 & 2 & 4 & 9
+    \\ \hdashline
+    PF-1.2          & Install a battery and propulsion system that can store and provide the requisite amount energy.              & 2 & 3 & 6 & 9
+    \\ \hdashline
+    PF-1.3          & Install a battery capable of providing the required energy.                                                 & 1 & 3 & 3 & 6
+    \\ \hdashline
+    PF-2.3          & Install a battery and propulsion system that can store and provide the requisite amount energy.              & 1 & 3 & 3 & 6
+    \\ \hdashline
+    PF-3            & Spend considerable resources developping a control system capable of boosting controllability               & 1 & 3 & 3 & 6
+    \\ \bottomrule
+    \end{tabularx}
+\end{table}
+
+
+
+
+\begin{table}
+    \centering
+    \caption{Mitigation measures for problematic risks of the Winged Quadcopter}
+    \label{tab:miti_wing_quad}
+    \begin{tabularx}{\textwidth}{l L *{4}{c} }
+    \toprule
+    Risk            & Impact and Likelihood explanation
+    \\ \midrule
+    PH-1.1          & Devise an efficient way of dividing the structure such that it fits into the prescribed volume.     & 1 & 3 & 3 & 6
+    \\ \hdashline
+    PF-1.2          & Install a battery and propulsion system that can store and provide the requisite amount of energy.              & 1 & 3 & 3 & 6
+    \\ \hdashline
+    PF-1.4          & Install a battery and propulsion system that can store and provide the requisite amount of energy.              & 1 & 3 & 3 & 6
+    \\ \hdashline
+    PF-2.3          & Install a battery that can provide the required amount of energy.              & 1 & 3 & 3 & 6
+    \\ \bottomrule
+    \end{tabularx}
+\end{table}
+
+\fi

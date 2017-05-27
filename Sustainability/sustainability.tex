@@ -1,0 +1,151 @@
+\chapter{Sustainability Analysis}
+\label{ch:sustain}
+\setlength{\parindent}{15pt}
+%Brian Joel Chris
+
+Sustainability is an important aspect that should be considered as a trade-off criterion. A system has an impact on its environment for its entire life cycle. Sustainability has an environmental, social and economical aspect. In order to evaluate sustainability of each concept, a clear definition of a sustainable design is formulated as following:
+
+
+\begin{quote}
+	\begin{itshape}
+	\textit{Sustainable Design is defined as an Unmanned Aerial System design which has low environmental impacts throughout its life cycle, from design phase until end-of-life phase.}
+	\end{itshape}
+\end{quote}
+
+
+All three aspects should be assessed to have a solid sustainability analysis. However, only impacts in the environmental aspect will be assessed, as impacts on the social aspect are assumed to be same for all concepts; for instance, residents of a city may feel insecure  and unhappy due to UAVs flying over their houses. Impacts on the economical aspect are assessed in \autoref{ch:costanal}, so they will not be assessed in this chapter. 
+
+\section{Sustainability Trade-Off}
+
+In this section, the sustainability trade-off performed in the whole chapter is analysed. First, a summary of the final results is presented in \autoref{tab:costsubtrade}. Then, the grading system that has been used is explained.  
+
+\subsection{Summary}
+
+In this section, a summary regarding the sustainability performance is given in \autoref{tab:sustrade}. It can be seen that The Winged Quadcopter and The Tailsitter score best in terms of sustainability. This comes due to their low noise emission compared to tilt-rotor concepts for example. Also the materials used have a lower carbon footprint and cumulative energy demand. 
+It can also be noted that The Tandem is the worst in terms of sustainability. This is due to the higher noise emissions and bad manufacturing performance.
+
+Regarding the weights, the manufacturing trade-off has obtained a weight of 67\% while the noise emissions have obtained only 33\%. The reasoning behind this is that the noise emission have only been evaluated qualitatively, while the manufacturing trade-off makes use of numerical values to compare the concepts. 
+
+%\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\begin{table}[H]
+    \centering
+    \caption{Sustainability Sub Trade-Off}
+    \label{tab:sustrade} 
+    \begin{tabular}{r|>{\centering}p{3.3cm}:>{\centering}p{1.6cm}|c} 
+    \textbf{Concept \rotatebox{90}{\hspace{0.5cm}Criterion}}         & 
+    \rotatebox{90}{\textbf{Manufacturing}}                           & 
+    \rotatebox{90}{\textbf{Noise Emissions}}                         &
+    \rotatebox{90}{\textbf{Outcome}} 
+    \\ \midrule
+    The Tailsitter         &  ++  &    0   & 83.5 \% 
+    \\\hdashline
+    The Tandem           & -     &    -        & 25\% 
+    \\\hdashline
+    The Prandtl Box        &    0 &   +        & 58.25\% 
+    \\\hdashline
+    The Tiltrotor          & -    &     \texttt{-{}-}    & 16.75\% 
+    \\\hdashline
+    The Winged Quad.       & ++    &   0       & 83.5\% 
+    \\ \midrule\midrule
+    Weight             & 67    & 33        &  
+    \end{tabular}
+\end{table}
+
+\subsection{Grading System}
+
+There are two criteria for sustainability analysis. It is assumed that manufacturing criteria is twice as important as noise emissions criteria. Due to the differences in analysis for both criteria, a quantitative analysis with calculations is carried out for manufacturing criteria while a qualitative analysis with literature study and estimations based on engineering intuition is carried out for noise emissions criteria. Thus, the manufacturing criteria receives 67\% and the noise emissions criteria receives 33\%. Rating of trade-off is explained in \autoref{tab:susweight}.
+
+\begin{table}[htb]
+\centering
+\caption{Definition of sustainability grading system}
+\label{tab:susweight}
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{Rating}           & \textbf{Meaning: manufacturing} &\textbf{Meaning: noise emissions}
+        \\ \midrule
+         ++            &    \textit{not used}     & Excels
+        \\ \hdashline
+        +               & No CED and CO$_{2}$ & Lower
+        \\ \hdashline
+         0          & Low CED and CO$_{2}$ & Average
+        \\ \hdashline
+          -           & High CED and CO$_{2}$ & Higher 
+        \\ \hdashline
+         \texttt{-{}-}    & \textit{not used} & Unacceptable
+        \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+
+\section{Manufacturing}
+
+In order to calculate the Cumulative Energy Demand (CED) and the carbon footprint of the different materials, the structural weight of each concept has to be assessed. For this, it is assumed that the structural weight is 20\% of the maximum take-off weight. For a robust carbon footprint and CED analysis this can be assumed, as only the relative difference between the designs matters for the trade-off.
+
+\paragraph{The Tailsitter} This concept will be constructed with a polymer foam, according to the pattern set by ATMOS UAV systems. This can be a foam like Expanded Polypropylene (EPP)\footnote{\url{http://www.atmosuav.com/ufaqs/materials/}, Accessed 19-05-2017} 
+EPP has the property that it is convenient and environmentally friendly to recyclable. During recycling it does not emit harmful gasses\footnote{\url{http://www.intcorecycling.com/how-to-recycle-epp.html}, Accessed 19-05-2017}.
+
+\paragraph{The Tandem} Due to the bi-directional loads that are exerted on the wings, composites will most likely not be the chosen material. The wing is both used for lift generation, engine supporting and for impact absorption during landing. The chosen material will either be aluminium or EPP foam. Both aluminium and EPP foam are, in contrast to composites, easily disposed and can even be recycled. However, due to the higher allowable stresses for aluminium, this material will be used for the preliminary design.
+
+\paragraph{The Prandtl Box} Due to the fact that the Prandtl Box is a complex structure, the stress analysis of it is a critical part. As Aluminium metals have a higher yield stress than polymers, it is for now assumed that the structure of the Prandtl Box is made out of aluminium. This make The Prandtl Box recyclable and gives it good manufacturing sustainability properties. 
+
+\paragraph{The Tiltrotor} The wings of The Tiltrotor need to be strong and stiff enough to carry the loads and weight of the engines. This makes the use of polymer material inappropriate due to their low strength. Furthermore the engines will create loads in two direction, horizontally and vertically, hence composites materials are also not favourable. A metal alloy like aluminium is used as final choice. This makes The Tiltrotor recyclable and reusable.
+
+\paragraph{The Winged Quadcopter} The wing of The Winged Quadcopter will not use composites due to drilling holes or joining parts. Either metal or EPP in combination with a metal structural element is viable for this concept. As the loads of this concept are assumed smaller than The Tandem, EPP will be used in this case.\newpage
+
+The structural mass, carbon footprint and cumulative energy demand are summarised in \autoref{tab:manufac}. The carbon footprint and CED are calculated using US Life Cycle Inventory Database version October 2013 \cite{USLCI}. All EPP parts are assumed to be polypropylene resin and all aluminium parts are assumed to be smelt first then rolled, as aluminium sheets can be used to manufacture structural parts of UAV concepts.
+
+\begin{table}[htb]
+    \centering
+    \caption{Carbon Footprint and Cumulative Energy Demand per Concept}
+    \label{tab:manufac}
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{lcccc}
+            \toprule
+            \textbf{Concept}&\textbf{Total Mass [kg]} & \textbf{Structural Mass [kg]} &\textbf{CED [MJ]} & \textbf{Carbon Footprint [kg]}\\
+            \midrule
+            The Tailsitter   & 52 & 10.4 & 782 & 12.6\\\hdashline
+            The Tandem       & 80 & 16   & 2986 & 266\\\hdashline
+            The Prandtl Box  &  38& 7.6  & 1419 & 114\\\hdashline
+            The Tiltrotor    & 75 & 15   & 2800 & 250 \\\hdashline
+            The Winged Quad. & 44 & 8.8  & 662 & 10.7\\ 
+            \bottomrule
+    \end{tabular}}
+\end{table}
+
+
+\section{Noise emissions} 
+
+Detailed calculation of noise emissions in this stage of the design phase is not possible. For this reason, the concepts regarded as having a nominal noise emission are discarded in the following discussion and are regarded as reference values in the trade-off. Then, the exceptional configurations are analysed with respect to the reference concept. An in-depth analysis of noise emissions also requires the discussion of the different types of noise. For example, animals may be affected by different types of frequencies, while people are in general irritated by higher frequencies. 
+
+\paragraph{The Tailsitter} It uses a general flying wing shape as the design. This will not create any flow interference and hence not a lot of noise is generated due to the general aerodynamics. However, two counter rotating double propellers are used for propulsion. Due to interferences in counter-rotating propellers, the noise will increase significantly \cite{vanderover}. As these two propellers will have a higher intake area then The Winged Quadcopter, they will have a lower angular speed, which will reduce the noise again. In the end, it is assumed that the noise will be equal to the noise of The Winged Quadcopter.  
+
+\paragraph{The Tandem} It has two wings and four engines; front and rear engines are not in line, however, increased flow interference will occur. This will result in an increase in noise. 
+
+\paragraph{The Prandtl Box} Its wing configuration has a lower noise emission than conventional aircraft \cite{prandtl_noise}. Considering the propulsion system, four engines are used to generate thrust, which is similar to the reference design. Hence the noise level of The Prandtl Box is decreased compared to the general reference.
+
+\paragraph{The Tiltrotor} It is highly impractical in terms of noise. Civil applications of a tiltrotor-type aircraft are limited due to this general known problem \footnote{\url{https://rotorcraft.arc.nasa.gov/Research/Programs/tramprogram.html}, Accessed 19-05-2017}. 
+
+
+\paragraph{The Winged Quadcopter} It is assumed to have a nominal noise level.
+
+
+
+
+\section{Other aspects} %these are just stated but not included in trade-off, assumed to be constant
+
+Besides the manufacturing and noise emissions, each concept introduces issues related to sustainability. Although they are important and have to be taken into account in the final design, they are not part of this trade-off due to the fact that they are assumed to be equal for each subsystem. Several of these aspects are listed and explained in this section. 
+
+First, transport of the UAV parts has to be taken into account. Depending on where a part is produced, it might have to be transported to another location for further processing. This will increase the carbon footprint of the design. For now however, all concepts are assumed to be manufactured at the same location under the same transport circumstances.
+
+Then, reusability of the drone is also an important subject to be accounted for. A cracked wing of a drone might easily be replaced without having to create a new one. This is mainly dependant on how the drone is assembled and whether each subsystem can easily be removed. For the conceptual phase of the design, this is assumed to be constant. 
+
+Finally, the social aspect of each concept is assumed to be same. As mentioned earlier, inhabitants living near a flying area can feel insecure or unhappy. Appearance of UAVs will not matter to the inhabitants, so the social aspect is negligible for a trade-off.
+ 
+
+
+
+
+
+
+
+
